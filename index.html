@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Meal Prep CEO</title>
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<script src="accounts-config.js"></script>
+<script src="fixtures.js"></script>
+</head>
+<body>
+
+<div id="fixtureRibbon" class="fixture-ribbon" hidden>
+  FIXTURE MODE: invented numbers only, nothing here is real.
+</div>
+<div id="fixtureMark" class="fixture-mark" hidden aria-hidden="true">FIXTURE</div>
+
+<!-- The door: sign-in only. This app never creates accounts. -->
+<main id="doorView" class="door" hidden>
+  <div class="door-card">
+    <img class="door-mark" src="assets/logo.svg" alt="">
+    <h1>Meal Prep CEO</h1>
+    <p class="door-sub">The CEO dashboard for Meal Prep. One login, ever.</p>
+    <button id="doorGoogle" class="door-btn" type="button">Continue with Google</button>
+    <button id="doorApple" class="door-btn" type="button">Continue with Apple</button>
+    <div class="door-divider"><span>or with email</span></div>
+    <form id="doorForm" autocomplete="on">
+      <label>Email
+        <input id="doorEmail" type="email" autocomplete="username" required>
+      </label>
+      <label>Password
+        <input id="doorPassword" type="password" autocomplete="current-password" required>
+      </label>
+      <button class="door-btn door-btn-main" type="submit">Sign in</button>
+    </form>
+    <p id="doorError" class="door-error" role="alert" hidden></p>
+    <p class="door-note">Sign-in only. Accounts are made in the Meal Prep app, never here.</p>
+  </div>
+</main>
+
+<!-- The closed door: signed in, but not the owner. No data, no counts, no hints. -->
+<main id="closedView" class="door" hidden>
+  <div class="door-card">
+    <img class="door-mark" src="assets/logo.svg" alt="">
+    <h1>This door is closed.</h1>
+    <p class="door-sub">Nothing to see here.</p>
+    <button id="closedSignOut" class="door-btn" type="button">Sign out</button>
+  </div>
+</main>
+
+<!-- The dashboard. -->
+<div id="dashView" class="dash" hidden>
+  <aside class="sidebar">
+    <div class="side-head">
+      <img class="side-mark" src="assets/logo.svg" alt="">
+      <div>
+        <div class="side-title">Meal Prep CEO</div>
+        <div class="side-sub">CEO dashboard</div>
+      </div>
+    </div>
+    <nav id="sideNav" class="side-nav" aria-label="Dashboard sections"></nav>
+    <div class="side-foot">
+      <div id="weekLabel" class="side-week"></div>
+      <button id="dashSignOut" class="side-signout" type="button">Sign out</button>
+    </div>
+  </aside>
+  <main id="dashMain" class="dash-main" tabindex="-1"></main>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
